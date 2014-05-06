@@ -10,16 +10,16 @@
 *-------------------------------------------------------------------------------------*/
 
 $labels = array(
-    'name' => __('Sort Groups', 'acs'),
-    'singular_name' => __('Sort Group', 'acs'),
+    'name' => __('Curated Groups', 'acs'),
+    'singular_name' => __('Curated Group', 'acs'),
     'add_new' => __('Add New', 'acs'),
-    'add_new_item' => __('Add New Sort Group', 'acs'),
-    'edit_item' =>  __('Edit Sort Group', 'acs'),
-    'new_item' => __('New Sort Group', 'acs'),
-    'view_item' => __('View Sort Group', 'acs'),
-    'search_items' => __('Search Sort Groups', 'acs'),
-    'not_found' =>  __('No Sort Groups found', 'acs'),
-    'not_found_in_trash' => __('No Sort Groups found in Trash', 'acs'),
+    'add_new_item' => __('Add New Curated Group', 'acs'),
+    'edit_item' =>  __('Edit Curated Group', 'acs'),
+    'new_item' => __('New Curated Group', 'acs'),
+    'view_item' => __('View Curated Group', 'acs'),
+    'search_items' => __('Search Curated Groups', 'acs'),
+    'not_found' =>  __('No Curated Groups found', 'acs'),
+    'not_found_in_trash' => __('No Curated Groups found in Trash', 'acs'),
 );
 
 register_post_type('acs', array(
@@ -32,6 +32,30 @@ register_post_type('acs', array(
     'supports' => array('title'),
 ));
 
+$labels = array(
+    'name'              => _x( 'Collections', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Collection', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Collections' ),
+    'all_items'         => __( 'All Collections' ),
+    'parent_item'       => __( 'Parent Collection' ),
+    'parent_item_colon' => __( 'Parent Collection:' ),
+    'edit_item'         => __( 'Edit Collection' ),
+    'update_item'       => __( 'Update Collection' ),
+    'add_new_item'      => __( 'Add New Collection' ),
+    'new_item_name'     => __( 'New Collection Name' ),
+    'menu_name'         => __( 'Manage Collections' ),
+);
+
+$args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => false
+);
+
+register_taxonomy( 'acs_collections', array( 'acs' ), $args );
 
 /*--------------------------------------------------------------------------------------
 *
