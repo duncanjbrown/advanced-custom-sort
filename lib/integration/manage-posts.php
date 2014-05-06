@@ -26,3 +26,16 @@ function acs_add_taxonomy_filters() {
 
 	}
 }
+
+/**
+ * Restrict the columns on the acs edit screen
+ * @return array 
+ */
+function acs_columns_filter() {
+    return array(
+        'cb' => '<input type="checkbox" />',
+        'title' => __('Title', 'acs'),
+    );
+}
+
+add_filter( sprintf( 'manage_edit-%s_columns', ACS_POST_TYPE ), 'acs_columns_filter');
