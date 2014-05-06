@@ -1,6 +1,6 @@
 #Advanced Custom Sort
 
-This plugin provides useful post-sorting and queuing functionality like Drupal's nodequeues.
+This plugin (http://wordpress.org/plugins/advanced-custom-sort/) provides useful post-sorting and queuing functionality like Drupal's nodequeues.
 
 It's no longer updated, though. So this fork exists to add new features such as
 
