@@ -1,0 +1,167 @@
+/* Custom select box & search */
+
+#acs_select {
+    padding: 5px 0 5px 0;
+}
+
+#acs_select_box {
+    border: 1px solid #dfdfdf;
+    background: #fff url(../images/select-gradient.png) top right no-repeat;
+    cursor: pointer;
+}
+
+#acs_select_value {
+    margin: 0 8px 0 0;
+    padding: 6px 8px;
+    background: url(../images/icon-down.png) right 10px no-repeat;
+}
+
+#acs_select_box.active #acs_select_value {
+    margin: 6px 8px 0 0;
+    padding-bottom: 6px;
+    background: url(../images/icon-close.png) right top no-repeat;
+}
+
+#acs_select_popup {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    display: none;
+    z-index: 5;
+}
+
+#acs_select_options {
+    height: 160px;
+    overflow-y: auto;
+}
+
+#acs_filter {
+    background: #eaf2fa;
+    padding: 6px;
+}
+
+#acs_filter_input {
+    width: 280px;
+}
+
+#acs_filter a.button-primary {
+    float: right;
+}
+
+.acs_option {
+    border-top: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.acs_option:hover {
+    background: #f5f5f5;
+}
+
+.acs_option.used {
+    display: none;
+}
+
+#acs_sortable li {
+    cursor: move;
+    margin: 4px 0 0 0;
+    padding: 8px;
+    line-height: 1.0;
+    color: #fff;
+    background: #44a7d7;
+    border-radius: 5px;
+}
+
+#acs_sortable li.even {
+    background: #298cba;
+}
+
+.cb {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/checkbox-off.png) no-repeat;
+    padding-right: 10px;
+}
+
+.cb.on {
+    background: url(../images/checkbox-on.png) no-repeat;
+}
+
+.acs_remove {
+    float: right;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(../images/button_remove.png) no-repeat;
+    margin-top: -2px;
+}
+
+.acs_remove:hover {
+    background-position: 0 100%;
+}
+
+.acs_filter_help {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    background: url(../images/icon-help.png) no-repeat;
+    vertical-align: top;
+}
+
+.acs_ghost_text {
+    cursor: text;
+    position: absolute;
+    padding: 6px 0 0 5px;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Options table */
+
+#acs_options .inside {
+    margin: 0;
+    padding: 0;
+}
+
+.acs_input {
+    border: 0;
+}
+
+.acs_input select,
+.acs_input input[type="text"] {
+    width: 99.95%;
+    padding: 5px;
+    outline: none;
+}
+
+#wpcontent .acs_input select {
+    height: 100px;
+}
+
+.acs_input td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.acs_input tr:last-child td {
+    border-bottom: 0;
+}
+
+.acs_input td.label {
+    width: 24%;
+    border-right: 1px solid #ebebeb;
+}
+
+.acs_input td.label label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+.acs_input td.label p.description {
+    color: #888;
+}
