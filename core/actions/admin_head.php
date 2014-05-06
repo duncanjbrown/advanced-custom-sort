@@ -11,7 +11,7 @@
 
 if (in_array($GLOBALS['pagenow'], array('post.php', 'post-new.php')))
 {
-    if ('acs' == $GLOBALS['post_type'])
+    if ( ACS_POST_TYPE == $GLOBALS['post_type'])
     {
         echo '<script type="text/javascript" src="' . $this->dir . '/js/tipTip/jquery.tipTip.js" ></script>';
         echo '<script type="text/javascript" src="' . $this->dir . '/js/functions.input.js" ></script>';

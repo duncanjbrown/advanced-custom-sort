@@ -22,7 +22,7 @@ $labels = array(
     'not_found_in_trash' => __('No Curated Groups found in Trash', 'acs'),
 );
 
-register_post_type('acs', array(
+register_post_type( ACS_POST_TYPE, array(
     'labels' => $labels,
     'public' => false,
     'show_ui' => true,
@@ -55,7 +55,7 @@ $args = array(
     'rewrite'           => false
 );
 
-register_taxonomy( 'acs_collections', array( 'acs' ), $args );
+register_taxonomy( ACS_TAX, array( 'acs' ), $args );
 
 /*--------------------------------------------------------------------------------------
 *
@@ -74,4 +74,4 @@ function acs_columns_filter()
     );
 }
 
-add_filter('manage_edit-acs_columns', 'acs_columns_filter');
+add_filter( sprintf( 'manage_edit-%s_columns', ACS_POST_TYPE ), 'acs_columns_filter');
