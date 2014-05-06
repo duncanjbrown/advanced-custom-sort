@@ -4,11 +4,22 @@ Plugin Name: Advanced Custom Sort
 Plugin URI: http://uproot.us/advanced-custom-sort/
 Description: Create groups of custom-ordered posts.
 Version: 1.2.2
-Author: Matt Gibbs
+Author: Matt Gibbs, Duncan Brown
 Author URI: http://uproot.us/
 License: GPL
 Copyright: Matt Gibbs
 */
+
+
+
+define( 'ACS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'ACS_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
+
+set_include_path(get_include_path() . PATH_SEPARATOR . ACS_PLUGIN_PATH);
+
+include( 'lib/helpers.php' );
+
+acs_include( 'lib/integration' );
 
 $acs = new Acs();
 $acs->version = '1.2.2';
