@@ -21,6 +21,8 @@ include( 'lib/helpers.php' );
 
 acs_include( 'lib/integration' );
 
+
+
 $acs = new Acs();
 $acs->version = '1.2.2';
 
@@ -46,8 +48,6 @@ class Acs
         $this->dir = plugins_url('advanced-custom-sort');
         $this->orderby = false;
 
-        // add actions
-        add_action('init', array($this, 'init'));
         add_action('admin_head', array($this, 'admin_head'));
         add_action('admin_footer', array($this, 'admin_footer'));
         add_action('admin_menu', array($this, 'admin_menu'));
