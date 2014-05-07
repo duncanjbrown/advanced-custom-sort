@@ -22,19 +22,9 @@ function acs_get_group( $args ) {
 
 	$args = wp_parse_args( $args, $defaults );
 
-	$query = new WP_Query ( array( 
-		'post_type' => ACS_POST_TYPE,
-		'posts_per_page' => 1,
-		'fields' => 'ids',
-		'post__in' => array( $args['group_id'] )
-	) );
-
-	$post = reset( $query->posts );
-
-	if( $post ) {
-		return (array) maybe_unserialize( get_post_meta( $post->ID, ACS_POST_META, true ) );
+	if( $args['group_id'] ) {
+		return (array) maybe_unserialize( get_post_meta( $args['group_id'], ACS_POST_META, true ) );
 	} else {
 		return array();
 	}
-
 }

@@ -1,1 +1,0 @@
-<link rel="stylesheet" type="text/css" href="<?php echo $this->dir; ?>/css/style.screen_extra.css" />

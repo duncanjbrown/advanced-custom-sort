@@ -14,3 +14,27 @@ function acs_include( $path ) {
 	    include $filename;
 	}
 }
+
+/**
+ * Get ready to do boilerplate POST handling repeatedly
+ * @param  callable $callback 
+ * @return void
+ */
+function acs_handle_post_update( $callback ) {
+	return function( $post_id ) use ( $callback ) {
+	    
+	    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+	        return;
+	    }
+
+	    if ( !wp_verify_nonce( $_POST['ei_noncename'], 'ei-n' ) ) {
+	        return;
+	    }
+
+	    if ( wp_is_post_revision( $post_id ) ) {
+	        $post_id = wp_is_post_revision($post_id);
+	    }
+
+	    call_user_func( $callback, $post_id );
+	};
+}
