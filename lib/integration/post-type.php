@@ -5,16 +5,16 @@
 
 add_action( 'init', function() {
     $labels = array(
-        'name' => __('Curated Groups', 'acs'),
-        'singular_name' => __('Curated Group', 'acs'),
+        'name' => __('Lists', 'acs'),
+        'singular_name' => __('List', 'acs'),
         'add_new' => __('Add New', 'acs'),
-        'add_new_item' => __('Add New Curated Group', 'acs'),
-        'edit_item' =>  __('Edit Curated Group', 'acs'),
-        'new_item' => __('New Curated Group', 'acs'),
-        'view_item' => __('View Curated Group', 'acs'),
-        'search_items' => __('Search Curated Groups', 'acs'),
-        'not_found' =>  __('No Curated Groups found', 'acs'),
-        'not_found_in_trash' => __('No Curated Groups found in Trash', 'acs'),
+        'add_new_item' => __('Add New List', 'acs'),
+        'edit_item' =>  __('Edit List', 'acs'),
+        'new_item' => __('New List', 'acs'),
+        'view_item' => __('View List', 'acs'),
+        'search_items' => __('Search Lists', 'acs'),
+        'not_found' =>  __('No Lists found', 'acs'),
+        'not_found_in_trash' => __('No Lists found in Trash', 'acs'),
     );
 
     register_post_type( ACS_POST_TYPE, array(

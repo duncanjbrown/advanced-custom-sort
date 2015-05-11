@@ -39,6 +39,6 @@ function acs_handle_post_update( $callback ) {
 	        $post_id = wp_is_post_revision($post_id);
 	    }
 
-	    call_user_func( $callback, $post_id );
+	    call_user_func( $callback, $post_id, $_POST );
 	};
 }
