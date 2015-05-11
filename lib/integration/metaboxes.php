@@ -20,6 +20,7 @@ function acs_input_meta_box() {
 		'post__not_in' => $selected,
 		'post_type' => $post_types ? $post_types : get_post_types( array( 'exclude_from_search' => false ) ),
 		'orderby' => 'title',
+		'posts_per_page' => 10
 	) );
 
 	$candidates = $query->posts;
