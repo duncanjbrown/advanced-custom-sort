@@ -22,6 +22,8 @@ function acs_load_admin_ui() {
 }
 
 function acs_enqueue_scripts() {
+	wp_enqueue_script( 'underscore' );
+	wp_enqueue_script( 'acs-jst', ACS_PLUGIN_URI . '/js/jst.js', false, false, true );
 	wp_enqueue_script( 'acs-ui', ACS_PLUGIN_URI . '/js/functions.input.js', false, false, true );
 	wp_enqueue_style( 'acs-ui-css', ACS_PLUGIN_URI . '/css/style.input.css' );
 

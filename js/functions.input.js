@@ -18,7 +18,7 @@
         });
 
         // load
-        jQuery(".acs_option").click(function() {
+        jQuery(".acs_option").live('click', function() {
             jQuery(this).find(".cb").toggleClass("on");
         });
 
@@ -28,7 +28,7 @@
         });
 
         // select box
-        jQuery("#acs_select_box").click(function() {
+        jQuery("#acs_select_box").live('click', function() {
             jQuery(this).toggleClass("active");
             jQuery("#acs_select_popup").toggle();
         });
@@ -57,11 +57,50 @@
         });
 
         // filter select box options
-        jQuery("#acs_filter_input").keyup(function() {
-            var input = jQuery(this).val();
-
+        ACS.dynamicSearch( jQuery("#acs_filter_input"), function(data) {
+            var html = $.map( data, function( candidate ) {
+                return JST['candidate_post']({candidate: candidate});
+            }).join('');
+            $('#acs_select_options').html(html);
         });
     });
+
+    ACS.dynamicSearch = function($input, resultCallback) {
+
+        var self = this,
+            busy = false;
+
+        $input.keyup(function() {
+            var term = jQuery(this).val();
+            self.search(term);
+        });
+
+        this.search = function(term) {
+            if( !busy ) {
+                busy = true;
+                setTimeout(function() {
+                    busy = false;
+                }, 500);
+            } else {
+                return;
+            }
+            $.ajax({
+                type: 'GET',
+                url: ajaxurl,
+                dataType: "json",
+                data: {
+                    action: 'acs_search',
+                    s: term
+                },
+                success: function(data) {
+                    resultCallback(data);
+                },
+                failure: function() {
+                }
+            })
+        }
+
+    }
 
 
 
