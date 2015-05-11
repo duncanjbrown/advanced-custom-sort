@@ -23,9 +23,6 @@ acs_include( 'lib/integration' );
 acs_include( 'lib/ui' );
 acs_include( 'lib/group' );
 
-
-
-
 $acs = new Acs();
 $acs->version = '1.2.2';
 
@@ -42,7 +39,7 @@ class Acs
     *
     *	@author Matt Gibbs
     *	@since 1.0.0
-    * 
+    *
     *-------------------------------------------------------------------------------------*/
 
     function __construct()
@@ -50,8 +47,6 @@ class Acs
         $this->path = (string) dirname(__FILE__);
         $this->dir = plugins_url('advanced-custom-sort');
         $this->orderby = false;
-
-        add_action('admin_footer', array($this, 'admin_footer'));
 
         // add filters
         add_filter('posts_orderby', array($this, 'posts_orderby'));
@@ -64,33 +59,13 @@ class Acs
     }
 
 
-
-    /*--------------------------------------------------------------------------------------
-    *
-    *	admin_footer
-    *
-    *	@author Matt Gibbs
-    *	@since 1.0.0
-    * 
-    *-------------------------------------------------------------------------------------*/
-
-    function admin_footer()
-    {
-        if ('acs' == $GLOBALS['post_type'] && 'edit.php' == $GLOBALS['pagenow'])
-        {
-            include('core/actions/admin_footer.php');
-        }
-    }
-
-
-
     /*--------------------------------------------------------------------------------------
     *
     *	posts_orderby
     *
     *	@author Matt Gibbs
     *	@since 1.0.0
-    * 
+    *
     *-------------------------------------------------------------------------------------*/
 
     function posts_orderby($arg)
@@ -103,14 +78,14 @@ class Acs
         }
         return $arg;
     }
-    
+
     /*--------------------------------------------------------------------------------------
     *
     *	admin_print_scripts
     *
     *	@author Matt Gibbs
     *	@since 1.0.0
-    * 
+    *
     *-------------------------------------------------------------------------------------*/
 
     function admin_print_scripts()

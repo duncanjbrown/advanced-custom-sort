@@ -1,12 +1,12 @@
-<?php 
+<?php
 /**
  * @package  acs
  */
 
 /**
  * Require the .php files in a directory
- * @param  string $path 
- * @return void       
+ * @param  string $path
+ * @return void
  */
 function acs_include( $path ) {
 	$path = ACS_PLUGIN_PATH . '/' . $path;
@@ -17,14 +17,18 @@ function acs_include( $path ) {
 
 /**
  * Get ready to do boilerplate POST handling repeatedly
- * @param  callable $callback 
+ * @param  callable $callback
  * @return void
  */
 function acs_handle_post_update( $callback ) {
 	return function( $post_id ) use ( $callback ) {
-	    
+
 	    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
 	        return;
+	    }
+
+	    if( !isset( $_POST['ei_noncename'] ) ) {
+	    	return;
 	    }
 
 	    if ( !wp_verify_nonce( $_POST['ei_noncename'], 'ei-n' ) ) {
