@@ -2,17 +2,13 @@
 
 class ACS_List {
 
-	/**
-	 * @var WP_Post
-	 */
-	var $post;
+	var $post_id;
 
 	/**
-	 * Accepts a post object
-	 * @param WP_Post $post
+	 * Accepts a post_id
 	 */
-	function __construct( $post ) {
-		$this->post = $post;
+	function __construct( $post_id ) {
+		$this->post_id = $post_id;
 	}
 
 	/**
@@ -20,7 +16,7 @@ class ACS_List {
 	 * @return array
 	 */
 	public function get_allowed_post_types() {
-		$types = maybe_unserialize( get_post_meta( $this->post->ID, ACS_POST_TYPES_META, true ) );
+		$types = maybe_unserialize( get_post_meta( $this->post_id, ACS_POST_TYPES_META, true ) );
 		if( $types ) {
 			return $types;
 		} else {
@@ -33,11 +29,29 @@ class ACS_List {
 	 * @return array
 	 */
 	public function get_posts() {
-		$posts = maybe_unserialize( get_post_meta( $this->post->ID, ACS_POST_META, true ) );
+		$posts = maybe_unserialize( get_post_meta( $this->post_id, ACS_POST_META, true ) );
 		if( $posts ) {
 			return $posts;
 		} else {
 			return array();
 		}
+	}
+
+	/**
+	 * Update the post ids
+	 * @param  array $post_ids
+	 * @return void
+	 */
+	public function update_posts( $post_ids ) {
+		update_post_meta( $this->post_id, ACS_POST_META, $post_ids );
+	}
+
+	/**
+	 * Update the post types
+	 * @param  array $types
+	 * @return void
+	 */
+	public function update_post_types( $types ) {
+		update_post_meta( $this->post_id, ACS_POST_TYPES_META, $types );
 	}
 }
