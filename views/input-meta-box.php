@@ -7,17 +7,11 @@
     </div>
     <div id="acs_select_popup">
         <div id="acs_filter">
-            <label class="acs_ghost_text" for="acs_filter_input">Start typing to filter...</label>
+            <label class="acs_ghost_text" for="acs_filter_input">Start typing to search...</label>
             <input type="text" id="acs_filter_input" value="" autocomplete="off" />
             <a id="add-selected-posts" class="button-primary" href="#"><?php _e('Add Selected Posts'); ?></a>
         </div>
         <div id="acs_select_options">
-			<?php foreach( $candidates as $candidate ) : ?>
-            <div class="acs_option<?php echo $selected && in_array( $candidate->ID, $selected ) ? 'used' : null ?>" type="<?php echo $candidate->post_type; ?>" rel="<?php echo $candidate->ID; ?>">
-                <span class="cb"></span>
-                <span class="acs_title"><?php echo $candidate->post_title; ?></span>
-            </div>
-			<?php endforeach; ?>
         </div>
     </div>
 </div>
