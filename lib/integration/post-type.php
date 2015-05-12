@@ -25,6 +25,7 @@ add_action( 'init', function() {
         'capability_type' => 'page',
         'hierarchical' => false,
         'supports' => array('title'),
+        'menu_icon' => 'dashicons-list-view'
     ));
 
     $labels = array(
