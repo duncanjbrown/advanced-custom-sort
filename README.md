@@ -4,8 +4,8 @@ This plugin (http://wordpress.org/plugins/advanced-custom-sort/) provides useful
 
 It's no longer updated, though. So this fork exists to add new features such as
 
-- Multiple lists of sets, as opposed to one monolithic group
-- A better interface to work with post ids from a set
+- Groupable lists, so you can categorise them
+- A simpler API
 
 and to clean up styling issues that arrived with WP 3.9.
 
