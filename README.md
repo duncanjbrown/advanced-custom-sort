@@ -17,6 +17,8 @@ The plugin will create a post type called 'acs', appearing under the 'Lists' men
 
 In there, create a list with 'New List'. Enter a title, then select posts using the search box below.
 
+![Screenshot](/../screenshots/screenshots/Screen%20Shot%202015-05-12%20at%2010.55.50.png?raw=true)
+
 #### Using lists
 
 To get hold of a list, you need the title of the list.
