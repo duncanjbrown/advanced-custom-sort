@@ -31,5 +31,5 @@ function acs_enqueue_scripts() {
 }
 
 function acs_add_metaboxes() {
-	add_meta_box('acs_input', 'Group Posts', 'acs_input_meta_box', 'acs', 'normal', 'high');
+	add_meta_box('acs_input', 'List Contents', 'acs_input_meta_box', 'acs', 'normal', 'high');
 }

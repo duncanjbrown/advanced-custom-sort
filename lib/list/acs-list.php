@@ -12,19 +12,6 @@ class ACS_List {
 	}
 
 	/**
-	 * Get the post types allowed for this group
-	 * @return array
-	 */
-	public function get_allowed_post_types() {
-		$types = maybe_unserialize( get_post_meta( $this->post_id, ACS_POST_TYPES_META, true ) );
-		if( $types ) {
-			return $types;
-		} else {
-			return array();
-		}
-	}
-
-	/**
 	 * Get the post IDs making up this group
 	 * @return array
 	 */
@@ -35,6 +22,13 @@ class ACS_List {
 		} else {
 			return array();
 		}
+	}
+
+	public function get_wp_query() {
+		return new WP_Query([
+			'post__in' => $this->get_posts(),
+			'post_type' => get_post_types( array( 'exclude_from_search' => false ) ),
+		]);
 	}
 
 	/**
