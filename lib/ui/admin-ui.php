@@ -11,11 +11,8 @@ add_action( 'admin_head', 'acs_load_admin_ui' );
  */
 function acs_load_admin_ui() {
 
-	global $pagenow;
-	global $typenow;
-
 	// only load on the ACS 'List' post pages
-	if (in_array( $pagenow, array( 'post.php', 'post-new.php' ) ) && ACS_POST_TYPE === $typenow  ) {
+	if ( is_acs_page() ) {
     	acs_enqueue_scripts();
     	acs_add_metaboxes();
 	}
@@ -32,4 +29,11 @@ function acs_enqueue_scripts() {
 
 function acs_add_metaboxes() {
 	add_meta_box('acs_input', 'List Contents', 'acs_input_meta_box', 'acs', 'normal', 'high');
+}
+
+function is_acs_page() {
+	global $pagenow;
+	global $typenow;
+
+	return in_array( $pagenow, array( 'post.php', 'post-new.php' ) ) && ACS_POST_TYPE === $typenow;
 }
