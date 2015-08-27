@@ -34,8 +34,8 @@ add_action( 'save_post', acs_handle_post_update( 'acs_handle_input_meta_box' ) )
  * @return void
  */
 function acs_handle_input_meta_box( $post_id, $postdata ) {
-    if( isset( $postdata[ACS_POST_META] ) ) {
-    	$list = new ACS_List( $post_id );
-	    $list->update_posts( $postdata[ACS_POST_META] );
+	if( isset( $postdata['acs_save_posts'] ) ) {
+		$list = new ACS_List( $post_id );
+		$list->update_posts( ( isset($postdata[ACS_POST_META])? $postdata[ACS_POST_META] : array() ) );
 	}
 }
