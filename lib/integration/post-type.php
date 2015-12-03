@@ -19,11 +19,12 @@ add_action( 'init', function() {
 
     register_post_type( ACS_POST_TYPE, array(
         'labels' => $labels,
-        'public' => false,
+        'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
         'capability_type' => 'page',
         'hierarchical' => false,
+        'rewrite' => array( 'slug' => 'lists' ),
         'supports' => array('title'),
         'menu_icon' => 'dashicons-list-view'
     ));
