@@ -1,0 +1,12 @@
+{
+    "name": "duncanjbrown/advanced-custom-sort",
+    "type": "wordpress-plugin",
+    "description": "Nodequeue-like functionality for WordPress",
+    "authors": [
+        {
+            "name": "Duncan Brown",
+            "email": "duncanjbrown@gmail.com"
+        }
+    ],
+    "require": {}
+}
