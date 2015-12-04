@@ -1,5 +1,5 @@
 {
-  "name": "advanced-custom-sort",
+  "name": "duncanjbrown/advanced-custom-sort",
   "version": "1.3.0",
   "description": "This plugin provides useful post-sorting and queuing functionality like Drupal's nodequeues.",
   "devDependencies": {
