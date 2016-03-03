@@ -37,6 +37,11 @@ If you prefer you can just get the IDs
 		echo get_post_meta( $id, 'price', true ); // for example
 	}
 
+#### REST API support
+
+This plugin supports WP REST API v2. It will add an 'acs' endpoint and link to members
+along the relation `http://acs.list/member`.
+
 ##### Notes
 
 * This plugin doesn't respect or care about post types. You can have a list that mixes and matches whatever you want.

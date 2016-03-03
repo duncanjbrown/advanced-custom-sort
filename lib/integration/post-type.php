@@ -22,6 +22,7 @@ add_action( 'init', function() {
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
+        'show_in_rest' => true,
         'capability_type' => 'page',
         'hierarchical' => false,
         'rewrite' => array( 'slug' => 'lists' ),
